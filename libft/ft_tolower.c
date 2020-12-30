@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:48:45 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/12/30 18:06:03 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/10/31 18:22:47 by sabrenda          #+#    #+#             */
+/*   Updated: 2020/11/05 03:10:11 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-
-int		ft_printf(const char *, ...);
-
-#endif
+int		ft_tolower(int ch)
+{
+	if (ch >= 'A' && ch <= 'Z')
+		return (ch + 32);
+	return (ch);
+}

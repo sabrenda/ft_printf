@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:48:45 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/12/30 18:06:03 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/11/08 16:28:34 by sabrenda          #+#    #+#             */
+/*   Updated: 2020/11/09 15:38:30 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list *last;
 
-int		ft_printf(const char *, ...);
-
-#endif
+	if (!lst)
+		return (NULL);
+	last = lst;
+	while (last->next != NULL)
+		last = last->next;
+	return (last);
+}

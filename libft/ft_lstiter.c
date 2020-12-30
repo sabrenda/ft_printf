@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:48:45 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/12/30 18:06:03 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/11/08 16:28:31 by sabrenda          #+#    #+#             */
+/*   Updated: 2020/11/08 16:38:47 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	t_list	*count;
 
-int		ft_printf(const char *, ...);
-
-#endif
+	if (!lst || !f)
+		return ;
+	count = lst;
+	while (count)
+	{
+		f(count->content);
+		count = count->next;
+	}
+}

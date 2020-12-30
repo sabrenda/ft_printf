@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:48:45 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/12/30 18:06:03 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/10/29 20:12:40 by sabrenda          #+#    #+#             */
+/*   Updated: 2020/11/08 17:44:46 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t		j;
 
-int		ft_printf(const char *, ...);
-
-#endif
+	j = 0;
+	while (str[j] != '\0')
+		j++;
+	return (j);
+}

@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_printf.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:47:53 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/12/30 21:21:19 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/11/04 02:56:50 by sabrenda          #+#    #+#             */
+/*   Updated: 2020/11/29 09:39:44 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *str, ...)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	va_list	print;
-	va_start(print, str);
-	if (ft_strrchr(str, '%'))
-		ft_work(str);
-	else
+	int			i;
+	int			j;
+	size_t		len;
+	char		*str;
 
-
-
-	va_end(print);
-	return ()
+	if (!s1 || !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_printf.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sabrenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:47:53 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/12/30 21:21:19 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/10/30 21:59:39 by sabrenda          #+#    #+#             */
+/*   Updated: 2020/11/01 16:26:20 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *str, ...)
+char	*ft_strchr(const char *s, int c)
 {
-	va_list	print;
-	va_start(print, str);
-	if (ft_strrchr(str, '%'))
-		ft_work(str);
-	else
+	size_t	i;
 
-
-
-	va_end(print);
-	return ()
+	i = 0;
+	if (c == '\0')
+	{
+		while (s[i])
+			i++;
+		return ((char *)s + i);
+	}
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	return (NULL);
 }
