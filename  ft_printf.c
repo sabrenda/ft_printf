@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*    ft_printf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:47:53 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/05 17:01:45 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/07 02:56:32 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
 
 int		ft_printf(const char *str, ...)
@@ -26,5 +25,4 @@ int		ft_printf(const char *str, ...)
 	va_end(print_arg);
 	//free(str_copy);
 	return (count_printf);
-	printf("");
 }

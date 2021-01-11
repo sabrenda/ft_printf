@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_parser_flags.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/11 05:46:36 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/09 00:29:20 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/11 00:13:58 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list print_va)
+int	ft_parser_flags(const char **str, t_flags t_flags1)
 {
-	unsigned int	count;
-
-	count = 0;
-	while (1)
-	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, print_va);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
-	}
-	return (count);
+	if (**str == '-')
+		ft_minus(t_flags1);
+	else if (**str == '+')
+		ft_plus(t_flags1);
+	else if (**str == ' ')
+		ft_space(t_flags1);
+	else if (**str == '#')
+		ft_octothorpe(t_flags1);
+	else if (**str == '0')
+		ft_zero(t_flags1);
 }

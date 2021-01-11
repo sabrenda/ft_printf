@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_plus.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/11 05:46:36 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/10 20:15:57 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/10 20:40:27 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list print_va)
-{
-	unsigned int	count;
+//для выводимого десятичного числового значения
 
-	count = 0;
-	while (1)
-	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, print_va);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
-	}
-	return (count);
+void	ft_plus(t_flags t_flags1)
+{
+	t_flags1.plus = 1;
 }
