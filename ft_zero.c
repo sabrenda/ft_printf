@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_zero.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/12 07:51:43 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/10 20:17:08 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/12 08:30:53 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list ap)
+void	ft_zero(t_f t_flag)
 {
-	unsigned int	count;
-
-	count = 0;
-	while (1)
-	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, ap);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
-	}
-	return (count);
+	if (t_flag.minus == 1)
+		t_flag.zero = 0;
+	else
+		t_flag.zero = 1;
 }

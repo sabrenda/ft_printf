@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/12 07:51:43 by Ahmed            ###   ########.fr       */
+/*   Created: 2020/10/31 17:13:37 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/12 08:46:09 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list ap)
+int		ft_atoi(const char **str)
 {
-	unsigned int	count;
+	int	znak;
+	int	res;
 
-	count = 0;
-	while (1)
+	res = 0;
+	znak = 1;
+	while ((**str >= 9 && **str <= 13) || **str == 32)
+		*str++;
+	if (**str == '-' || **str == '+')
 	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, ap);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
+		if (**str == '-')
+			znak = -1;
+		*str++;
 	}
-	return (count);
+	while (**str >= '0' && **str <= '9')
+	{
+		res = res * 10 + (**str - '0');
+		*str++;
+	}
+	*str--;
+	return ((res * znak));
 }

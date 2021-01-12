@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_dot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/12 07:51:43 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/11 19:37:55 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/12 08:20:22 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list ap)
+void	ft_dot(const char **str, va_list ap, t_f t_flag)
 {
-	unsigned int	count;
-
-	count = 0;
+	t_flag.d_flag_on = 1;
+	t_flag.dot = 0;
+	*str++;
 	while (1)
 	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, ap);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
+		if (**str == '-')
+			t_flag.dot = 0;
+		else if (**str == '*')
+			t_flag.dot = va_arg(ap, int);
+		else if (ft_isdigit(*str))
+			t_flag.dot = ft_atoi(str);
+		if (t_flag.dot < 0)
+			t_flag.dot = 0;
+		break ;
 	}
-	return (count);
 }

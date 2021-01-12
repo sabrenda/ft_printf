@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_space.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 20:17:19 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/10 21:04:28 by Ahmed            ###   ########.fr       */
+/*   Created: 2020/10/30 21:59:39 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/12 08:46:22 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//Символ +(-) имеет больший приоритет
-//Используется только для десятичных числовых значений
-
-void	ft_space(t_flags t_flags1)
+char	*ft_strchr(const char *s, int c)
 {
-	if (t_flags1.plus = 1)
-		t_flags1.space = 0;
-	else
-		t_flags1.space = 1;
+	size_t	i;
+
+	i = 0;
+	if (c == '\0')
+	{
+		while (s[i])
+			i++;
+		return ((char *)s + i);
+	}
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	return (NULL);
 }

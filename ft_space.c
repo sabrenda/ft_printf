@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/12 07:51:43 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/10 20:17:19 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/12 08:30:23 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list ap)
-{
-	unsigned int	count;
+//Символ +(-) имеет больший приоритет
+//Используется только для десятичных числовых значений
 
-	count = 0;
-	while (1)
-	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, ap);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
-	}
-	return (count);
+void	ft_space(t_f t_flag)
+{
+	if (t_flag.plus = 1)
+		t_flag.space = 0;
+	else
+		t_flag.space = 1;
 }

@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 17:13:37 by sabrenda          #+#    #+#             */
-/*   Updated: 2020/11/09 16:14:26 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/11 22:43:40 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+int		ft_atoi(const char **str)
 {
-	int	i;
 	int	znak;
 	int	res;
 
-	i = 0;
 	res = 0;
 	znak = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while ((**str >= 9 && **str <= 13) || **str == 32)
+		*str++;
+	if (**str == '-' || **str == '+')
 	{
-		if (str[i] == '-')
+		if (**str == '-')
 			znak = -1;
-		i++;
+		*str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		res = res * 10 + (str[i++] - '0');
+	while (**str >= '0' && **str <= '9')
+	{
+		res = res * 10 + (**str - '0');
+		*str++;
+	}
+	*str--;
 	return ((res * znak));
 }

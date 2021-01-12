@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_printf.c                                   :+:      :+:    :+:   */
+/*   ft_type.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 23:20:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/12 07:51:43 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/10 17:54:47 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/12 08:56:29 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_work_printf(const char *str, va_list ap)
+void	ft_type(const char **str, va_list ap, t_f t_flag)
 {
-	unsigned int	count;
+	if (**str == 'c')
+		ft_build('c', ap, t_flag);
+	if (**str == 's')
 
-	count = 0;
-	while (1)
-	{
-		if (*str == '%')
-		{
-			count += ft_parser(&str, ap);
-			str++;
-		}
-		if (*str == '\0')
-			break ;
-		if (*str == '%')
-			continue;
-		write(1, str, 1);
-		str++;
-		count++;
-	}
-	return (count);
+	if (**str == 'p')
+
+	if (**str == 'd' || **str == 'i')
+
+	if (**str == 'u')
+
+	if (**str == 'x' || **str == 'X')
+
+	if (**str == 'n')
+
+	if (**str == 'f')
+
+	if (**str == 'g')
+
+	if (**str == 'e')
+
+	if (**str == '%')
+
 }

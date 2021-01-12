@@ -6,21 +6,28 @@
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:52:23 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/11 06:51:32 by Ahmed            ###   ########.fr       */
+/*   Updated: 2021/01/12 02:18:58 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void prov2(char str)
+void prov2(char **str)
 {
-	printf("%c",  str);
-	// if (**str == '1')
-	// 	(*str)++;
+	if (**str + 1 == 'B')
+	{
+		printf("yes\n");
+		printf("%c\n", **str);
+		printf("%c\n", **str + 1);
+		printf("yes\n");
+	}
+	else
+		printf("no\n");
+
 }
 void prov(char **str)
 {
-	prov2(**str);
+	prov2(str);
 }
 int main()
 {
@@ -36,12 +43,12 @@ int main()
 	//int l = 128;
 	// scanf("%s", str);
 	// printf("%s\n", str);
-	// prov(&str);
+	prov(&str);
 	// printf("%#.f", i); //float
 	// x = ft_printf("");
 	// printf("%020.10\n", c);
 	//x = printf("%c\n", c);//char
-	a = printf("%10.0010s\n", str);
+	//a = printf("%.-*s\n",2, str);
 	//printf("%d\n", a);
 
 	//x = printf("%.7s\n", "1234567891011121314");
