@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_i.c                                             :+:      :+:    :+:   */
+/*   ft_width_flag_work.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 16:03:46 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/12 07:59:37 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 00:11:18 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/13 07:05:41 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_init(t_f t_flag)
+int		ft_width_flag_work(t_f t_flag)
 {
-	t_flag.flag_on = 0;
-	t_flag.minus = 0;
-	t_flag.plus = 0;
-	t_flag.space = 0;
-	t_flag.octothorpe = 0;
-	t_flag.zero = 0;
-	t_flag.w_flag_on = 0;
-	t_flag.width = 0;
-	t_flag.d_flag_on = 0;
-	t_flag.dot = 0;
-	t_flag.lh_flag_on = 0;
-	t_flag.l = 0;
-	t_flag.ll = 0;
-	t_flag.h = 0;
-	t_flag.hh = 0;
-	t_flag.t_flag_on = 0;
-	t_flag.type = 0;
+	int		i;
+	char	c;
+
+	i = 1;
+	if (t_flag.zero)
+		c = '0';
+	else
+		c = ' ';
+	while (i < t_flag.width)
+	{
+		write(1, &c, 1);
+		i++;
+	}
+	return (i);
 }

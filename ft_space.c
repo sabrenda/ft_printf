@@ -6,7 +6,7 @@
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 20:17:19 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/12 08:30:23 by Ahmed            ###   ########.fr       */
+/*   Updated: 2021/01/13 01:03:33 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	ft_space(t_f t_flag)
 {
-	if (t_flag.plus = 1)
+	if (t_flag.plus == 1)
 		t_flag.space = 0;
 	else
 		t_flag.space = 1;

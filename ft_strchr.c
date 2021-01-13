@@ -6,13 +6,13 @@
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 21:59:39 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/12 08:46:22 by Ahmed            ###   ########.fr       */
+/*   Updated: 2021/01/13 04:29:36 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_strchr(const char *s, int c)
 {
 	size_t	i;
 
@@ -21,13 +21,13 @@ char	*ft_strchr(const char *s, int c)
 	{
 		while (s[i])
 			i++;
-		return ((char *)s + i);
+		return (1);
 	}
 	while (s[i])
 	{
 		if (s[i] == (char)c)
-			return ((char *)s + i);
+			return (1);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

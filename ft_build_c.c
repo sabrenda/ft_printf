@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_llhh.c                                          :+:      :+:    :+:   */
+/*   ft_build_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 00:35:34 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/13 01:03:04 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/12 17:34:30 by Ahmed             #+#    #+#             */
+/*   Updated: 2021/01/13 07:15:13 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			ft_llhh(const char **str, t_f t_flag)
+int		ft_build_c(va_list ap, t_f t_flag)
 {
-	t_flag.lh_flag_on = 1;
-	if (**str == 'l')
+	int		i;
+
+	i = 0;
+	t_flag.type_c = va_arg(ap, int);
+	if (t_flag.minus)
 	{
-		if (**str + 1 == 'l')
-		{
-			t_flag.ll = 1;
-			(*str)++;
-		}
-		else
-			t_flag.l = 1;
+		write(1, &t_flag.type_c, 1);
+		i += ft_width_flag_work(t_flag);
 	}
 	else
 	{
-		if (**str + 1 == 'h')
-		{
-			t_flag.hh = 1;
-			(*str)++;
-		}
-		else
-			t_flag.h = 1;
+		i += ft_width_flag_work(t_flag);
+		write(1, &t_flag.type_c, 1);
 	}
+	return (i);
 }

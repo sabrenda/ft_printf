@@ -6,7 +6,7 @@
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 19:37:55 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/12 08:20:22 by Ahmed            ###   ########.fr       */
+/*   Updated: 2021/01/13 00:58:59 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	ft_dot(const char **str, va_list ap, t_f t_flag)
 {
 	t_flag.d_flag_on = 1;
 	t_flag.dot = 0;
-	*str++;
+	(*str)++;
 	while (1)
 	{
 		if (**str == '-')
 			t_flag.dot = 0;
 		else if (**str == '*')
 			t_flag.dot = va_arg(ap, int);
-		else if (ft_isdigit(*str))
+		else if (**str >= '0' && **str <= '9')
 			t_flag.dot = ft_atoi(str);
 		if (t_flag.dot < 0)
 			t_flag.dot = 0;

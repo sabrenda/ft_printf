@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_llhh.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 00:35:34 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/13 01:03:04 by Ahmed            ###   ########.fr       */
+/*   Created: 2020/10/31 18:55:32 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 01:39:38 by Ahmed            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			ft_llhh(const char **str, t_f t_flag)
+char	*ft_strdup(const char *str)
 {
-	t_flag.lh_flag_on = 1;
-	if (**str == 'l')
+	char	*cp;
+	int		i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	if (!(cp = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	i = 0;
+	while (str[i])
 	{
-		if (**str + 1 == 'l')
-		{
-			t_flag.ll = 1;
-			(*str)++;
-		}
-		else
-			t_flag.l = 1;
+		cp[i] = str[i];
+		i++;
 	}
-	else
-	{
-		if (**str + 1 == 'h')
-		{
-			t_flag.hh = 1;
-			(*str)++;
-		}
-		else
-			t_flag.h = 1;
-	}
+	cp[i] = '\0';
+	return (cp);
 }
