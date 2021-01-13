@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*    ft_printf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 19:47:53 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 06:24:21 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 15:00:29 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 15:00:30 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "ft_printf.h"
 

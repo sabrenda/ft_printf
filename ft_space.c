@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 20:17:19 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/13 01:03:33 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 15:03:15 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 15:49:01 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 //Символ +(-) имеет больший приоритет
 //Используется только для десятичных числовых значений
 
-void	ft_space(t_f t_flag)
+void	ft_space(t_f *t_flag)
 {
-	if (t_flag.plus == 1)
-		t_flag.space = 0;
+	if (t_flag->plus == 1)
+		t_flag->space = 0;
 	else
-		t_flag.space = 1;
+		t_flag->space = 1;
 }

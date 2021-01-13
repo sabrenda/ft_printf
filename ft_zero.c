@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_zero.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 20:17:08 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/12 08:30:53 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 15:10:38 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 15:49:18 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_zero(t_f t_flag)
+void	ft_zero(t_f *t_flag)
 {
-	if (t_flag.minus == 1)
-		t_flag.zero = 0;
+	if (t_flag->minus == 1)
+		t_flag->zero = 0;
 	else
-		t_flag.zero = 1;
+		t_flag->zero = 1;
 }

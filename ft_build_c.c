@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_build_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 17:34:30 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/13 07:15:13 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 15:01:28 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 15:59:05 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "ft_printf.h"
 
-int		ft_build_c(va_list ap, t_f t_flag)
+int		ft_build_c(va_list ap, t_f *t_flag)
 {
 	int		i;
 
 	i = 0;
-	t_flag.type_c = va_arg(ap, int);
-	if (t_flag.minus)
+	t_flag->type_c = va_arg(ap, int);
+	if (t_flag->minus)
 	{
-		write(1, &t_flag.type_c, 1);
+		write(1, &t_flag->type_c, 1);
 		i += ft_width_flag_work(t_flag);
 	}
 	else
 	{
 		i += ft_width_flag_work(t_flag);
-		write(1, &t_flag.type_c, 1);
+		write(1, &t_flag->type_c, 1);
 	}
 	return (i);
 }

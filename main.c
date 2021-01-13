@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:52:23 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 07:07:40 by Ahmed            ###   ########.fr       */
+/*   Updated: 2021/01/13 20:14:35 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ int main()
 	// a = printf("%10c\n", c);
 	// a = ft_printf("%10c\n", c);
 	// printf("%d\n", a);
-	a = ft_printf("%10c\n", c);
+	a = ft_printf("\%\n");
+	printf("%d\n", a);
+	a = printf("\%\n");
 	printf("%d\n", a);
 
 	//x = printf("%.7s\n", "1234567891011121314");

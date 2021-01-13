@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_type.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 17:54:47 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/13 06:44:06 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 15:03:58 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 16:01:32 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_type(const char **str, va_list ap, t_f t_flag)
+int		ft_type(const char **str, va_list ap, t_f *t_flag)
 {
 	int		count;
 
@@ -39,5 +39,5 @@ int		ft_type(const char **str, va_list ap, t_f t_flag)
 	// 	count = ft_build_e(str, ap, t_flag);
 	// if (str == '%')
 	// 	count = ft_build_spec(str, ap, t_flag);
-	return (t_flag.width + count);
+	return (count);
 }

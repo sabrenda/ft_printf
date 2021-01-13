@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_minus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ahmed <Ahmed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 18:31:20 by Ahmed             #+#    #+#             */
-/*   Updated: 2021/01/12 08:29:52 by Ahmed            ###   ########.fr       */
+/*   Created: 2021/01/13 15:02:19 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/13 15:48:42 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_minus(t_f t_flag)
+void	ft_minus(t_f *t_flag)
 {
-	t_flag.minus = 1;
-	t_flag.zero = 0;
+	t_flag->minus = 1;
+	t_flag->zero = 0;
 }
