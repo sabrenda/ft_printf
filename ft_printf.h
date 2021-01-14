@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:03:08 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/14 17:14:12 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/15 02:06:46 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void			ft_llhh(const char **str, t_f *t_flag);
 int				ft_type(const char **str, va_list ap, t_f *t_flag);
 int				ft_build_c(va_list ap, t_f *t_flag);
 int				ft_build_s(va_list ap, t_f *t_flag);
+int				ft_build_spec(va_list ap, t_f *t_flag);
 int				ft_width_flag_work(t_f *t_flag, int i);
 int				ft_putlstr(char *s, int dot);
 int				ft_strchr(const char *s, int c);

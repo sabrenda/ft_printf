@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_build_s.c                                       :+:      :+:    :+:   */
+/*   ft_build_spec.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 02:02:38 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 00:33:44 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/15 02:01:31 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/15 02:19:46 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_build_s(va_list ap, t_f *t_flag)
+int		ft_build_spec(va_list ap, t_f *t_flag)
 {
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
-	t_flag->type_s = va_arg(ap, char *);
-	if (t_flag->type_s == NULL)
-		t_flag->type_s = "(null)";
-	if (t_flag->dot == -1)
-		t_flag->dot = ft_strlen(t_flag->type_s);
+	t_flag->type_spec = '%';
 	if (t_flag->minus)
 	{
-		i += ft_putlstr(t_flag->type_s, t_flag->dot);
-		i += ft_width_flag_work(t_flag, i);
+		i += write(1, &t_flag->type_spec, 1);
+		i += ft_width_flag_work(t_flag, 1);
 	}
 	else
 	{
-		while (t_flag->type_s[j] && j < t_flag->dot)
-			j++;
-		i = ft_width_flag_work(t_flag, j);
-		i += ft_putlstr(t_flag->type_s, t_flag->dot);
+		i += ft_width_flag_work(t_flag, 1);
+		i += write(1, &t_flag->type_spec, 1);
 	}
-	//printf("%d\n", i);//=================
+	//printf("\n%d\n", i);//=================
 	return (i);
 }
