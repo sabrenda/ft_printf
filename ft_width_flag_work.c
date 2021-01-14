@@ -6,18 +6,16 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:04:10 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 16:09:12 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/14 16:58:35 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_width_flag_work(t_f *t_flag)
+int		ft_width_flag_work(t_f *t_flag, int i)
 {
-	int		i;
 	char	c;
 
-	i = 1;
 	if (t_flag->zero)
 		c = '0';
 	else

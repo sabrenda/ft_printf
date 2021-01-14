@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_printf.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 00:07:49 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/14 00:07:52 by sabrenda         ###   ########.fr       */
+/*   Created: 2020/10/29 20:12:40 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/14 18:26:17 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *str, ...)
+unsigned int	ft_strlen(const char *str)
 {
-	int				count_printf;
-	// char			*str1;
-	va_list			ap;
+	unsigned int	j;
 
-	// str1 = ft_strdup(str);
-	count_printf  = 0;
-	va_start(ap, str);
-	count_printf += ft_work_printf(&str, ap);
-	va_end(ap);
-	return (count_printf);
+	j = 0;
+	while (str[j] != '\0')
+		j++;
+	return (j);
 }
