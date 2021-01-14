@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:37 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 15:53:54 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/14 23:00:38 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	ft_parser_flags(const char **str, t_f *t_flag)
 		ft_space(t_flag);
 	else if (**str == '#')
 		ft_octothorpe(t_flag);
-	else if (**str == '0')
+	else if (**str == '0' && !(t_flag->d_flag_on))
 		ft_zero(t_flag);
 }

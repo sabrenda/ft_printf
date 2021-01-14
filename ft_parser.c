@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:49 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/14 18:31:14 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/15 00:27:47 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@ int		ft_parser(const char **str, va_list ap)
 	{
 		if (ft_strchr("-+ #0", **str))
 			ft_parser_flags(str, &t_flag);
-		else if ((**str == '*' || ft_isdigit(str)) && !(t_flag.d_flag_on))
+		else if ((**str == '*' || ft_isdigit(str)))
 			ft_width(str, ap, &t_flag);
 		else if (**str == '.')
 			ft_dot(str, ap, &t_flag);
-		else if ((**str == 'l' || **str == 'h') && !(t_flag.lh_flag_on))
+		if ((**str == 'l' || **str == 'h') && !(t_flag.lh_flag_on))
 			ft_llhh(str, &t_flag);
-		else if (ft_strchr("cspdiuxXnfge", **str) || **str == '%')
+		if (ft_strchr("cspdiuxXnfge", **str) || **str == '%')
 			return (ft_type(str, ap, &t_flag));
+		if (**str == '\0')
+			break ;
 		(*str)++;
 	}
 	return (ft_type(str, ap, &t_flag));
