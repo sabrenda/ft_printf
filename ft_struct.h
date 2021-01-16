@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:03:41 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 06:34:12 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/16 07:29:21 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct				s_flag
 	int						minus;
 	int						plus;
 	int						space;
-	int						octothorpe;
+	int						octo;
 	int						zero;
 	int						width;
 	int						d_flag_on;
@@ -29,14 +29,15 @@ typedef struct				s_flag
 	int						ll;
 	int						h;
 	int						hh;
+	int						up_x_zero;
+	int						type_len_x;
 	int						t_flag_on;
 	char					type_c;
 	char					*type_s;
 	unsigned long long int	type_p;
 	int						type_i;
 	unsigned int			type_u;
-	int						type_x;
-	int						type_xx;
+	unsigned long long int	type_x;
 	unsigned int			type_n;
 	float					type_f;
 	float					type_g;

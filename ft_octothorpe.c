@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:28 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 15:48:09 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/15 16:57:18 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@
 
 void	ft_octothorpe(t_f *t_flag)
 {
-	t_flag->octothorpe = 1;
+	t_flag->octo = 2;
 }

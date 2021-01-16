@@ -6,11 +6,12 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 06:15:56 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 08:39:17 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/16 06:53:57 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 
 char	ft_goto_hexadecimal(unsigned int x)
 {
@@ -41,19 +42,18 @@ void	ft_bzero(void *s, size_t n)
 		str[i++] = '\0';
 }
 
-char	*ft_hexadecimal(unsigned long long int x)
+char	*ft_hexadecimal(unsigned long long int x, unsigned int len_x)
 {
 	unsigned long long int	a;
 	char					*str;
-	char					qwe[18];
+	char					qwe[len_x];
 	int						i;
 
 	i = 0;
-	a = 0;
-	if (!(str = (char *)malloc(sizeof(char) * 18)))
-		return (NULL);
-	ft_bzero(str, 18);
-	ft_bzero(qwe, 18);
+	if (!(str = (char *)malloc(sizeof(char) * len_x)))
+		return("");
+	ft_bzero(str, len_x);
+	ft_bzero(qwe, len_x);
 	while (1)
 	{
 		a = (x / 16) * 16;
