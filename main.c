@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:52:23 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/16 07:32:13 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/17 02:48:28 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,12 @@ int main()
 	// printf("%d\n", a);
 	// a = ft_printf("\%\n");
 	// printf("%d\n", a);
-	a = printf("|%40.5x|", 12122122213);
+	a = printf("|% -022d|", 2147483647);
 		printf("\n%d\n", a);
-	a = ft_printf("|%40x|", 12122122213);
-	// a = ft_printf("|%lx|", 18446744073709551615);
+	a = ft_printf("|% -022d|", 2147483647);
 		printf("\n%d\n", a);
+
+	// 	printf("\n%d\n", a);
 	// printf("[ft_printf]\n");
 	// a = ft_printf("printf = %010c\n", c);
 	// printf("%d\n", a);

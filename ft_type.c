@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:03:58 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 16:13:20 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/16 19:11:38 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int		ft_type(const char **str, va_list ap, t_f *t_flag)
 		count = ft_build_p(ap, t_flag);
 	if (**str == 'x' || **str == 'X')
 		count = ft_build_x(**str, ap, t_flag);
-	// if (**str == 'd' || str == 'i')
-	// 	count = ft_build_i(ap, t_flag);
+	if (**str == 'd' || **str == 'i')
+		count = ft_build_i(ap, t_flag);
 	// if (**str == 'u')
 	// 	count = ft_build_u(ap, t_flag);
 	// if (**str == 'n')
