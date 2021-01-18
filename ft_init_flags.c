@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:01:41 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/16 07:29:35 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/17 23:54:29 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ void	ft_init_flags(t_f *t_flag)
 	t_flag->hh = 0;
 	t_flag->t_flag_on = 0;
 	t_flag->type_len_x = 0;
+	t_flag->add = 0;
+	t_flag->dota = 0;
 }

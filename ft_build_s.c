@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 02:02:38 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 08:07:07 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/17 08:22:21 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int		ft_build_s(va_list ap, t_f *t_flag)
 		i = ft_width_flag_work(t_flag, j);
 		i += ft_putlstr(t_flag->type_s, t_flag->dot);
 	}
-	//printf("%d\n", i);//=================
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:01:35 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 00:26:33 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/17 08:42:42 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_dot(const char **str, va_list ap, t_f *t_flag)
 {
 	t_flag->d_flag_on = 1;
 	t_flag->dot = 0;
+	t_flag->zero = 0;
 	(*str)++;
-
 	while (1)
 	{
 		if (**str == '-')

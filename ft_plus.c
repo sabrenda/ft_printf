@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:57 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 15:49:43 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/17 05:57:02 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@
 void	ft_plus(t_f *t_flag)
 {
 	t_flag->plus = 1;
+	t_flag->space = 0;
 }

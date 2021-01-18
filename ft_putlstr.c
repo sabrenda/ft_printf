@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/14 18:26:11 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/18 00:51:38 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int		ft_putlstr(char *s, int dot)
 		write(1, &s[i], 1);
 		i++;
 	}
+	free(s);
+	s = NULL;
 	return (i);
 }

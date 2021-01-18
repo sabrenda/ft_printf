@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:52:23 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/17 02:48:28 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/18 04:35:10 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ int main()
 	// printf("%d\n", a);
 	// a = ft_printf("\%\n");
 	// printf("%d\n", a);
-	a = printf("|% -022d|", 2147483647);
+	a = printf("|%0-20.5p|", 12345678);
 		printf("\n%d\n", a);
-	a = ft_printf("|% -022d|", 2147483647);
+	a = ft_printf("|%0-20.5p|", 12345678);
 		printf("\n%d\n", a);
 
 	// 	printf("\n%d\n", a);

@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 02:41:33 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/16 07:11:45 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/18 04:34:28 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_build_p(va_list ap, t_f *t_flag)
 	{
 		i += ft_zero_and_x();
 		i += ft_putlstr(t_flag->type_s, ft_strlen(t_flag->type_s));
-		i += ft_width_flag_work(t_flag, i);
+		return (i += ft_width_flag_work(t_flag, i));
 	}
 	else
 	{
@@ -66,8 +66,6 @@ int		ft_build_p(va_list ap, t_f *t_flag)
 		i += ft_width_flag_work(t_flag, ft_strlen(t_flag->type_s) + 2);
 		if (!(t_flag->zero))
 			i += ft_zero_and_x();
-		i += ft_putlstr(t_flag->type_s, ft_strlen(t_flag->type_s));
+		return (i += ft_putlstr(t_flag->type_s, ft_strlen(t_flag->type_s)));
 	}
-	free(t_flag->type_s);
-	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:03:41 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/16 22:51:46 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/18 04:08:26 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ typedef struct				s_flag
 	int						up_x_zero;
 	int						type_len_x;
 	int						t_flag_on;
+	int						add;
+	int						dota;
 	char					type_c;
 	char					*type_s;
 	unsigned long long int	type_p;
-	long long int			type_i;
-	unsigned long long int	type_u;
+	intmax_t				type_i;
+	uintmax_t				type_u;
 	unsigned long long int	type_x;
 	unsigned int			type_n;
 	float					type_f;
