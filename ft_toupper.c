@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:45:19 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:45:20 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+void	ft_toupper(char *ch, t_f *t_flag)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	t_flag->up_x_zero = 1;
+	while (ch[i])
 	{
-		write(1, &s[i], 1);
+		if (ch[i] >= 'a' && ch[i] <= 'z')
+			ch[i] = (ch[i] - 32);
 		i++;
 	}
-	return (i);
 }

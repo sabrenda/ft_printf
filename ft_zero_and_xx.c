@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_zero_and_xx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:44:40 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:44:48 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+int		ft_zero_and_xx(t_f *t_flag)
 {
-	int	i;
-
-	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	if (t_flag->type_x)
 	{
-		write(1, &s[i], 1);
-		i++;
+		if (t_flag->up_x_zero)
+		{
+			write(1, "0X", 2);
+			return (2);
+		}
+		else
+		{
+			write(1, "0x", 2);
+			return (2);
+		}
 	}
-	return (i);
+	t_flag->octo = 0;
+	return (0);
 }

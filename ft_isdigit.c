@@ -6,11 +6,9 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/13 15:02:04 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/18 06:04:56 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_printf.h"
 
 int		ft_isdigit(const char **ch)
 {

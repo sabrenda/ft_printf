@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:42:41 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:42:42 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	unsigned char	*str;
+	size_t			i;
 
 	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	str = (unsigned char *)s;
+	while (i < n)
+		str[i++] = '\0';
 }

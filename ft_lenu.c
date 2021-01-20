@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_lenu.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:47:34 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:47:35 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+unsigned int	ft_lenu(uintmax_t s)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	if (s == 0)
 	{
-		write(1, &s[i], 1);
+		i++;
+		return (i);
+	}
+	while (s != 0)
+	{
+		s = s / 10;
 		i++;
 	}
 	return (i);

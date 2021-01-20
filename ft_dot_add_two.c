@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_dot_add_two.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:55:16 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/19 06:27:05 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+void	ft_dot_add_two(t_f *t_flag)
 {
-	int	i;
+	int i;
 
-	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	if (t_flag->dot == -1)
 	{
-		write(1, &s[i], 1);
-		i++;
+		t_flag->dota = ft_leni(t_flag->type_i);
+		return ;
 	}
-	return (i);
+	if (t_flag->type_i >= 0)
+	{
+		i = t_flag->dot - ft_leni(t_flag->type_i);
+	}
+	else
+	{
+		i = t_flag->dot - (ft_leni(t_flag->type_i) - 1);
+	}
+	if (i <= 0)
+		t_flag->dota = ft_leni(t_flag->type_i);
+	else
+		t_flag->dota = i + ft_leni(t_flag->type_i);
 }

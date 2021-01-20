@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_goto_hexadecimal.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:41:54 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:42:11 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+char	ft_goto_hexadecimal(unsigned int x)
 {
-	int	i;
-
-	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	if (x == 10)
+		return ('a');
+	if (x == 11)
+		return ('b');
+	if (x == 12)
+		return ('c');
+	if (x == 13)
+		return ('d');
+	if (x == 14)
+		return ('e');
+	if (x == 15)
+		return ('f');
+	else
+		return (48 + x);
 }

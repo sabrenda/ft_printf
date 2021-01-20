@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_width_flag_work.c                               :+:      :+:    :+:   */
+/*   ft_hl_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 15:04:10 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:06:35 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:45:57 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:45:59 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_width_flag_work(t_f *t_flag, int i)
+void	ft_hl_x(va_list ap, t_f *t_flag)
 {
-	char	c;
-	int		res;
-
-	res = 0;
-	c = 0;
-	if (t_flag->zero)
-		c = '0';
-	else
-		c = ' ';
-	if (t_flag->type_i == 0 && !t_flag->dot
-			&& t_flag->width > 0 && !t_flag->minus)
-		t_flag->width++;
-	while (i < t_flag->width)
+	if (t_flag->l || t_flag->ll)
 	{
-		write(1, &c, 1);
-		i++;
-		res++;
+		t_flag->type_x = va_arg(ap, unsigned long long int);
+		t_flag->type_len_x = 16;
 	}
-	return (res);
+	else if (t_flag->h)
+	{
+		t_flag->type_x = va_arg(ap, unsigned int);
+		t_flag->type_len_x = 4;
+	}
+	else if (t_flag->hh)
+	{
+		t_flag->type_x = va_arg(ap, unsigned int);
+		t_flag->type_len_x = 2;
+	}
+	else
+	{
+		t_flag->type_x = va_arg(ap, unsigned int);
+		t_flag->type_len_x = 8;
+	}
 }

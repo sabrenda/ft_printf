@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_width_flag_work_s.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/19 00:44:42 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/19 00:53:27 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+int		ft_width_flag_work_s(t_f *t_flag, int i)
 {
-	int	i;
+	char	c;
+	int		res;
 
-	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	res = 0;
+	c = 0;
+	if (t_flag->zero)
+		c = '0';
+	else
+		c = ' ';
+	while (i < t_flag->width)
 	{
-		write(1, &s[i], 1);
+		write(1, &c, 1);
 		i++;
+		res++;
 	}
-	return (i);
+	return (res);
 }

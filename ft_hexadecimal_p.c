@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_hexadecimal_p.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:50:26 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:50:27 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+char	*ft_hexadecimal_p(unsigned long long int x)
 {
-	int	i;
+	unsigned long long int	a;
+	char					*str;
+	char					qwe[18];
+	int						i;
 
 	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	a = 0;
+	if (!(str = (char *)malloc(sizeof(char) * 18)))
+		return (NULL);
+	ft_bzero(str, 18);
+	ft_bzero(qwe, 18);
+	while (1)
 	{
-		write(1, &s[i], 1);
+		a = (x / 16) * 16;
+		qwe[i] = ft_goto_hexadecimal(x - a);
+		if (!(x = x / 16))
+			break ;
 		i++;
 	}
-	return (i);
+	a = 0;
+	while (0 <= i)
+		str[a++] = qwe[i--];
+	return (str);
 }

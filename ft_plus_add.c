@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlstr.c                                       :+:      :+:    :+:   */
+/*   ft_plus_add.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 16:22:00 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:17:57 by sabrenda         ###   ########.fr       */
+/*   Created: 2021/01/18 20:52:11 by sabrenda          #+#    #+#             */
+/*   Updated: 2021/01/18 20:52:15 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putlstr(char *s, int dot)
+int		ft_plus_add(t_f *t_flag)
 {
-	int	i;
-
-	i = 0;
-	if (dot == -1)
-		dot = ft_strlen(s);
-	while (s[i] && i < dot)
+	if (t_flag->plus)
 	{
-		write(1, &s[i], 1);
-		i++;
+		write(1, "+", 1);
+		t_flag->add = 1;
+		return (1);
 	}
-	return (i);
+	if (t_flag->space)
+	{
+		write(1, " ", 1);
+		t_flag->add = 1;
+		return (1);
+	}
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:10 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 18:42:58 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/18 06:02:01 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			ft_llhh(const char **str, t_f *t_flag)
+void	ft_llhh(const char **str, t_f *t_flag)
 {
 	t_flag->lh_flag_on = 1;
 	if (**str == 'l')

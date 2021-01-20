@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:01:41 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/17 23:54:29 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/19 20:52:53 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_init_flags(t_f *t_flag)
 {
 	t_flag->flag_on = 0;
 	t_flag->minus = 0;
+	t_flag->minus_add = 0;
 	t_flag->plus = 0;
 	t_flag->space = 0;
 	t_flag->octo = 0;

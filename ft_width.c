@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 14:59:56 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/17 07:22:19 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/20 03:49:44 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_width(const char **str, va_list ap, t_f *t_flag)
 		t_flag->width = ft_atoi(str);
 	if (t_flag->width < 0)
 	{
-		t_flag->width = 1;
+		t_flag->minus = 1;
+		t_flag->zero = 0;
 		t_flag->width *= -1;
 	}
 }

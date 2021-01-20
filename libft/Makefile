@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sabrenda <sabrenda@student.42.fr>          +#+  +:+       +#+         #
+#    By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/09 17:52:50 by sabrenda          #+#    #+#              #
-#    Updated: 2020/11/09 17:52:51 by sabrenda         ###   ########.fr        #
+#    Updated: 2021/01/18 05:07:41 by sabrenda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
