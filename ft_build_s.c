@@ -6,11 +6,46 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 02:02:38 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:29:54 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/21 20:59:18 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ft_putlstr(char *s, int dot)
+{
+	int	i;
+
+	i = 0;
+	if (dot == -1)
+		dot = ft_strlen(s);
+	while (s[i] && i < dot)
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}
+
+int		ft_width_flag_work_s(t_f *t_flag, int i)
+{
+	char	c;
+	int		res;
+
+	res = 0;
+	c = 0;
+	if (t_flag->zero)
+		c = '0';
+	else
+		c = ' ';
+	while (i < t_flag->width)
+	{
+		write(1, &c, 1);
+		i++;
+		res++;
+	}
+	return (res);
+}
 
 int		ft_build_s(va_list ap, t_f *t_flag)
 {

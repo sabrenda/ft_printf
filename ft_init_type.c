@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:01:51 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/18 06:02:55 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/21 20:53:33 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,4 @@ void	ft_init_type(t_f *t_flag)
 	t_flag->type_u = 0;
 	t_flag->type_x = 0;
 	t_flag->type_spec = 0;
-	// t_flag->type_n = 0;
-	// t_flag->type_f = 0;
-	// t_flag->type_g = 0;
-	// t_flag->type_e = 0;
 }

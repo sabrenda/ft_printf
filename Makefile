@@ -6,7 +6,7 @@
 #    By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/09 17:52:50 by sabrenda          #+#    #+#              #
-#    Updated: 2021/01/20 03:39:12 by sabrenda         ###   ########.fr        #
+#    Updated: 2021/01/21 20:59:29 by sabrenda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,24 +24,14 @@ SRC = ft_printf.c\
 		ft_build_p.c\
 		ft_build_x.c\
 		ft_width_flag_work.c\
-		ft_width_flag_work_s.c\
-		ft_width_flag_work_i.c\
-		ft_putlstr.c\
 		ft_strchr.c\
 		ft_atoi.c\
 		ft_isdigit.c\
 		ft_putin.c\
-		ft_putnbru.c\
 		ft_plus_add.c\
 		ft_zero_and_x.c\
 		ft_zero_and_xx.c\
-		ft_dot_add_i.c\
-		ft_dot_add_u.c\
-		ft_dot_add_x.c\
 		ft_dot.c\
-		ft_dot_add_two.c\
-		ft_dot_add_twou.c\
-		ft_dot_add_xtwo.c\
 		ft_init_flags.c\
 		ft_init_type.c\
 		ft_parser_flags.c\
@@ -55,13 +45,10 @@ SRC = ft_printf.c\
 		ft_llhh.c\
 		ft_hl_i.c\
 		ft_hl_u.c\
-		ft_putlstrx.c\
 		ft_hl_x.c\
 		ft_bzero.c\
 		ft_flag_work_i.c\
 		ft_strdup.c\
-		ft_hexadecimal.c\
-		ft_hexadecimal_p.c\
 		ft_goto_hexadecimal.c\
 		ft_strlen.c\
 		ft_leni.c\

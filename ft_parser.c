@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:02:49 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/15 00:27:47 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/21 04:30:25 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_parser(const char **str, va_list ap)
 	ft_init_type(&t_flag);
 	while (**str != '\0')
 	{
-		if (ft_strchr("-+ #0", **str))
+		if (ft_strchr("-+ #0", **str) && !t_flag.d_flag_on)
 			ft_parser_flags(str, &t_flag);
 		else if ((**str == '*' || ft_isdigit(str)))
 			ft_width(str, ap, &t_flag);

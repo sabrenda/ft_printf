@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:03:08 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 03:35:19 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/21 06:24:23 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct				s_flag
 	int						space;
 	int						octo;
 	int						zero;
+	int						speczero;
 	int						width;
 	int						dot;
 	int						flag_on;
@@ -45,8 +46,8 @@ typedef struct				s_flag
 	char					type_spec;
 	intmax_t				type_i;
 	uintmax_t				type_u;
+	uintmax_t				type_x;
 	unsigned long long int	type_p;
-	unsigned long long int	type_x;
 }							t_f;
 
 int							ft_printf(const char *str, ...);
@@ -64,21 +65,23 @@ int							ft_width_flag_work(t_f *t_flag, int i);
 int							ft_width_flag_work_i(t_f *t_flag, int i);
 int							ft_width_flag_work_s(t_f *t_flag, int i);
 int							ft_putlstr(char *s, int dot);
+int							ft_putlstr_p(t_f *t_flag);
 int							ft_putlstrx(t_f *t_flag, int dot);
 int							ft_strchr(const char *s, int c);
 int							ft_atoi(const char **str);
 int							ft_isdigit(const char **ch);
-int							ft_putnbru(uintmax_t nb);
 int							ft_putin(t_f *t_flag);
 int							ft_putinu(t_f *t_flag);
 int							ft_putnbr1(intmax_t nb);
 int							ft_putnbr2(intmax_t nb);
+int							ft_putnbru(uintmax_t nb);
 int							ft_plus_add(t_f *t_flag);
 int							ft_zero_and_x(void);
 int							ft_zero_and_xx(t_f *t_flag);
 int							ft_dot_add_i(t_f *t_flag);
 int							ft_dot_add_u(t_f *t_flag);
 int							ft_dot_add_x(t_f *t_flag);
+void						ft_dotstar(t_f *t_flag, va_list ap);
 void						ft_dot(const char **str, va_list ap, t_f *t_flag);
 void						ft_dot_add_two(t_f *t_flag);
 void						ft_dot_add_twou(t_f *t_flag);
@@ -101,7 +104,7 @@ void						ft_zero_is_shit(t_f *t_flag);
 void						ft_bzero(void *s, size_t n);
 int							ft_flag_work_i(t_f *t_flag);
 char						*ft_strdup(const char *str);
-char						*ft_hexadecimal(unsigned long long int x, unsigned int len_x);
+char						*ft_hexadecimal(uintmax_t x, unsigned int len_x);
 char						*ft_hexadecimal_p(unsigned long long int x);
 char						ft_goto_hexadecimal(unsigned int x);
 unsigned int				ft_strlen(const char *str);

@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 20:40:08 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/20 02:04:29 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/20 17:25:19 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int		ft_flag_work_i(t_f *t_flag)
 {
 	if (!t_flag->minus_add)
 		write(1, "-", 1);
+	if (t_flag->minus_add)
+		return (0);
 	t_flag->minus_add = 1;
 	if (t_flag->zero && !t_flag->d_flag_on)
 		return (1);

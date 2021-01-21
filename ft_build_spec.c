@@ -6,7 +6,7 @@
 /*   By: sabrenda <sabrenda@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 02:01:31 by sabrenda          #+#    #+#             */
-/*   Updated: 2021/01/18 22:27:51 by sabrenda         ###   ########.fr       */
+/*   Updated: 2021/01/21 05:22:56 by sabrenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int		ft_build_spec(t_f *t_flag)
 
 	i = 0;
 	t_flag->type_spec = '%';
+	if (t_flag->speczero && !t_flag->minus)
+		t_flag->zero = 1;
+
 	if (t_flag->minus)
 	{
 		i += write(1, &t_flag->type_spec, 1);
